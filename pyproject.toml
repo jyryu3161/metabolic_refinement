@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=65", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gapx"
+version = "0.1.0"
+description = "GA-based Integrated Gap-Filling & Pruning Framework for GEMs"
+authors = [
+  {name = "GAPx Contributors"}
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "cobra>=0.27",
+  "optlang>=1.5",
+  "pydantic>=1.10",
+  "pyyaml>=6.0",
+  "typer>=0.9",
+  "rich>=13.0"
+]
+
+[project.optional-dependencies]
+loopless = ["cobra[loopless]"]
+
+[project.scripts]
+gapx = "gapx.cli.main:app"
+
+[tool.setuptools.packages.find]
+include = ["gapx", "gapx.*"]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra"
+testpaths = ["tests"]
+

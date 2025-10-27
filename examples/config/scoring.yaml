@@ -1,0 +1,14 @@
+fitness:
+  mode: "weighted_sum"
+  weights:
+    task: 1.0
+    parsimony: 0.5
+    genomic: 0.3
+    thermo: 0.2
+  penalties:
+    hard_constraint_violation: 10.0
+    minor_violation: 2.0
+
+parsimony:
+  target: "min_reactions"
+  normalize_by_template_size: true

@@ -1,0 +1,29 @@
+tasks:
+  - id: "growth_m9_glucose"
+    category: "essential"
+    media:
+      set_exchange:
+        EX_glc__D_e: -10
+        EX_o2_e: -20
+        EX_nh4_e: -5
+        EX_so4_e: -1
+        EX_pi_e: -1
+        EX_h2o_e: -1000
+        EX_na1_e: -1000
+        EX_k_e: -1000
+      close_others: true
+    objective: "BIOMASS_Ecoli_core_w_GAM"
+    objective_sense: "max"
+    min_objective_value: 0.1
+    constraints:
+      - {rxn: "ATPM", lb: 3.15, ub: 3.15}
+    outputs_check:
+      flux_thresholds:
+        - {rxn: "EX_ac_e", max: 10}
+  - id: "acetate_utilization"
+    category: "basic"
+    media:
+      set_exchange: {EX_ac_e: -10, EX_o2_e: -20}
+      close_others: true
+    objective: "BIOMASS_Ecoli_core_w_GAM"
+    min_objective_value: 0.05

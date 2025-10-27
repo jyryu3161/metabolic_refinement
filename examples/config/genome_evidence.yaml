@@ -1,0 +1,14 @@
+genomic_evidence:
+  weights:
+    annotation: 1.0
+    homology: 0.6
+    phylogeny: 0.4
+    transcript_support: 0.8
+    proteome_support: 1.0
+  entries:
+    - reaction_id: "DB_R1"
+      annotation: true
+      homology_bitscore: 180.5
+      phylogeny_distance: 0.2
+      transcript_tpm: 12.4
+      protein_detected: true

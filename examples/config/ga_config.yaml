@@ -1,0 +1,29 @@
+ga:
+  population: 200
+  generations: 150
+  selection:
+    type: "tournament"
+    k: 3
+    elitism: 2
+  crossover:
+    template_region: {type: "uniform", p: 0.5}
+    database_region: {type: "uniform", p: 0.5}
+    pathway_aware: {enabled: true, block_size: "auto"}
+  mutation:
+    bitflip_p: 0.005
+    pathway_mutation: {enabled: true, p_pathway: 0.05}
+    adaptive:
+      stagnation_window: 10
+      scale_up: 2.0
+      max_bitflip_p: 0.05
+  constraints:
+    enforce_task_pass_for: ["essential"]
+    repair:
+      milp_min_additions: true
+      loopless_check: true
+      max_milp_time_s: 120
+  init_population_mix:
+    random: 0.4
+    conservative_template_keep: 0.2
+    evidence_only: 0.2
+    minimal_task_only: 0.2
