@@ -1,0 +1,9 @@
+omics:
+  transcriptomics:
+    file: "../data/rnaseq.tsv"
+    gene_col: "gene_id"
+    value_col: "TPM"
+    condition: "M9_glucose"
+  integration:
+    method: "GIMME"
+    thresholds: {on: 5.0, off: 0.5}

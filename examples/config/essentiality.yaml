@@ -1,0 +1,4 @@
+essentiality:
+  model_gene_to_truth:
+    b0002: "essential"
+    b0351: "nonessential"

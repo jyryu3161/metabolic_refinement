@@ -1,0 +1,28 @@
+run:
+  name: "ecoli_gapx_demo"
+  seed: 42
+  output_dir: "./runs/ecoli_gapx_demo"
+  device: "cpu"
+  parallel:
+    islands: 4
+    workers_per_island: 4
+    migration_interval: 20
+    migrants: 3
+
+inputs:
+  model_sources: "model_sources.yaml"
+  tasks: "tasks.yaml"
+  ga: "ga_config.yaml"
+  thermo: "thermo.yaml"
+  genomic_evidence: "genome_evidence.yaml"
+  scoring: "scoring.yaml"
+  omics: "omics.yaml"
+  essentiality: "essentiality.yaml"
+
+export:
+  best_model:
+    formats: ["sbml", "json"]
+    path: "./runs/ecoli_gapx_demo/export"
+  reports:
+    html: true
+    json: true

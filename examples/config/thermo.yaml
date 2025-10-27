@@ -1,0 +1,8 @@
+thermo:
+  enabled: true
+  loopless: true
+  temperature_K: 310.15
+  currency_pairs:
+    force_direction_for: ["ATP hydrolysis", "NADH oxidation"]
+  infeasible_action: "penalize_and_repair"
+  loop_penalty: 5.0

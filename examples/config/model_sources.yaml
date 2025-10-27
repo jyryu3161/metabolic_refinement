@@ -1,0 +1,17 @@
+template_model:
+  path: "../models/iJO1366.xml"
+  kind: "sbml"
+
+candidate_database:
+  reactions:
+    - id: "DB_R1"
+      stoichiometry: {"a_c": -1, "b_c": 1}
+      lb: 0
+      ub: 1000
+      genes: ["gX"]
+      subsystem: "Amino acid metabolism"
+  source: "custom"
+
+filters:
+  drop_if_no_genomic_evidence: true
+  drop_if_far_from_tasks: true
